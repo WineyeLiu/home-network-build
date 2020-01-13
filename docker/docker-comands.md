@@ -1,0 +1,16 @@
+
+
+## gitlab 
+
+```bash
+sudo docker run --detach \
+  --hostname 192.168.5.130 \
+  --publish 443:443 --publish 80:80 --publish 2222:22 \
+  --name gitlab \
+  --restart always \
+  --volume /srv/gitlab/config:/etc/gitlab \
+  --volume /srv/gitlab/logs:/var/log/gitlab \
+  --volume /srv/gitlab/data:/var/opt/gitlab \
+  gitlab/gitlab-ce:latest
+
+```
